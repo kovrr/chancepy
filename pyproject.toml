@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "chancepy"
 version = "0.1.0"
-description = ""
+description = "Random generator helper for Python"
 authors = ["Nuni <nuni@kovrr.com>"]
 
 [tool.poetry.dependencies]
