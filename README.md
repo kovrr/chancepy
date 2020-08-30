@@ -12,7 +12,9 @@ from chancepy import Chance
 rand_string = Chance.string()
 rand_guid = Chance.guid()
 rand_int = Chance.int(min=2, max=32)
-rand_letter = Chance.letter(pool='acegikmoqsuwy')
+rand_letter = Chance.letter(casing='lower')
+rand_char = Chance.character(pool='acegikmoqsuwy')
+
 
 ```
 
