@@ -19,6 +19,7 @@ def test_utils():
     assert Chance.pickone([1, 2, 3]) in [1, 2, 3]
     assert set(Chance.pickset([1, 2, 3], 2)) in [set([1, 2]), set([1, 3]), set([2, 3])]
 
+
 def test_time():
     assert Chance.date(year=2020).year == 2020
     assert Chance.date(day=31).day == 31
