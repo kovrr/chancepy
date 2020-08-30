@@ -1,13 +1,11 @@
+from chancepy.BaseRandom import BaseRandom
 import random
 import string
 from typing import Optional
 import uuid
 
-MAX_INT = 9007199254740991
-MIN_INT = -MAX_INT
 
-
-class Basics:
+class Basics(BaseRandom):
     @classmethod
     def guid(cls) -> str:
         return str(uuid.uuid4())
@@ -47,10 +45,11 @@ class Basics:
         return random.uniform(mini, maxi)
 
     @classmethod
-    def integer(cls, mini: int = -MIN_INT, maxi: int = MAX_INT) -> int:
-        return random.randint(mini, maxi)
+    def integer(cls, mini: int = None, maxi: int = None) -> int:
+        print(mini, maxi)
+        return random.randint(mini if mini is not None else cls.MIN_INT, maxi or cls.MAX_INT)
 
     @classmethod
-    def natural(cls, mini: int = 0, maxi: int = MAX_INT) -> int:
+    def natural(cls, mini: int = 0, maxi: int = None) -> int:
         mini = max(0, mini)
-        return cls.integer(mini, maxi)
+        return cls.integer(mini, maxi or cls.MAX_INT)
