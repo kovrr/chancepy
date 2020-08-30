@@ -33,8 +33,7 @@ jobs:
       
       - name: install deps
         run: poetry install
+
       - name: run tests
-        run: |
-          poetry shell 
-          pytest .
+        run: python -m pytest .
       
