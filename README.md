@@ -1,4 +1,5 @@
 # ChancePy
+[![PyPI Latest Release](https://img.shields.io/pypi/v/chancepy.svg)](https://pypi.org/project/chancepy/)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Actions Status](https://github.com/kovrr/chancepy/workflows/CI/badge.svg)](https://github.com/kovrr/chancepy/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/kovrr/chancepy/edit/master/LICENSE)
