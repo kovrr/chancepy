@@ -3,7 +3,7 @@
 [![Actions Status](https://github.com/kovrr/chancepy/workflows/CI/badge.svg)](https://github.com/kovrr/chancepy/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/kovrr/chancepy/edit/master/LICENSE)
 
-ChancePy - Random generator helper for Python
+ChancePy - Random generator helper for Python. Inspired by [ChanceJS](https://chancejs.com/index.html).
 
 
 ## Usage
@@ -21,7 +21,20 @@ rand_char = Chance.character(pool='acegikmoqsuwy')
 # Utilities
 rand_choice = Chance.pickone([1, 2, 3])
 rand_2_choices = Chance.pickset(['a', 'b', 'c', 'd'], 2)
+
+# Time
+rand_date_in_april = Chance.date(month=4)
+rand_year = Chance.year(mini=1990)
+rand_month_name = Chance.month(mode="full)
+rand_weekday = Chance.weekday(mode="short")
+rand_hour = Chance.hour()
+rand_min = Chance.minute()
+rand_second = Chance.second()
+rand_millisecond = Chance.millisecond()
+rand_timezone = Chance.timezone()
+rand_timestamp = Chance.timestamp()
+
 ```
 
 ## Contributing
-PRs are welcomed!
+PRs are welcome!
