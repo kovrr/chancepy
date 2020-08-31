@@ -24,4 +24,4 @@ rand_2_choices = Chance.pickset(['a', 'b', 'c', 'd'], 2)
 ```
 
 ## Contributing
-PRs are welcomed!
+PRs are welcome!
