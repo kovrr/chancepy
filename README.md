@@ -5,6 +5,13 @@
 
 ChancePy - Random generator helper for Python. Inspired by [ChanceJS](https://chancejs.com/index.html).
 
+## Installation
+
+### with pip
+`pip install chancepy`
+
+### with poetry
+`poetry add chancepy`
 
 ## Usage
 
