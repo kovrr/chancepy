@@ -46,7 +46,6 @@ class Basics(BaseRandom):
 
     @classmethod
     def integer(cls, mini: int = None, maxi: int = None) -> int:
-        print(mini, maxi)
         return random.randint(
             mini if mini is not None else cls.MIN_INT, maxi or cls.MAX_INT
         )
