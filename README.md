@@ -25,7 +25,7 @@ rand_2_choices = Chance.pickset(['a', 'b', 'c', 'd'], 2)
 # Time
 rand_date_in_april = Chance.date(month=4)
 rand_year = Chance.year(mini=1990)
-rand_month_name = Chance.month(mode="full)
+rand_month_name = Chance.month(mode="full")
 rand_weekday = Chance.weekday(mode="short")
 rand_hour = Chance.hour()
 rand_min = Chance.minute()
