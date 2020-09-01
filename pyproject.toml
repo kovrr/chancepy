@@ -3,6 +3,8 @@ name = "chancepy"
 version = "0.1.1"
 description = "Random generator helper for Python"
 authors = ["Nuni <nuni@kovrr.com>"]
+readme = "README.md"
+repository = "https://github.com/kovrr/chancepy"
 
 [tool.poetry.dependencies]
 python = "^3.8"
