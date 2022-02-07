@@ -28,6 +28,8 @@ rand_guid = Chance.guid()
 rand_int = Chance.int(min=2, max=32)
 rand_letter = Chance.letter(casing='lower')
 rand_char = Chance.character(pool='acegikmoqsuwy')
+rand_domain = Chance.domain()
+
 
 # Utilities
 rand_choice = Chance.pickone([1, 2, 3])
