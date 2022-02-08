@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "chancepy"
-version = "0.1.1"
+version = "0.1.2"
 description = "Random generator helper for Python"
 authors = ["Nuni <nuni@kovrr.com>"]
 readme = "README.md"
@@ -11,7 +11,7 @@ python = "^3.8"
 pytz = "^2020.1"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
+pytest = "^6.2.5"
 black = "^19.10b0"
 pytest-repeat = "^0.8.0"
 

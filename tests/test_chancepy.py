@@ -15,6 +15,8 @@ def test_chance_class():
     assert isinstance(Chance.letter(), str) and len(Chance.letter()) == 1
     assert isinstance(Chance.character(), str) and len(Chance.character()) == 1
     assert isinstance(Chance.guid(), str) and len(Chance.guid()) == 36
+    assert isinstance(Chance.domain(), str)
+    assert ".com" in Chance.domain('com')
 
 
 @pytest.mark.repeat(10)
@@ -30,7 +32,7 @@ def test_time():
     assert Chance.date(month=12).month == 12
     assert Chance.ampm() in ["am", "pm"]
     assert isinstance(Chance.timestamp(), int)
-    assert Chance.year() in range(2020, 2121)
+    assert Chance.year(2020,2120) in range(2020, 2121)
     assert Chance.month() in range(1, 13)
     assert Chance.weekday(mode="numeric") in range(0, 7)
     assert Chance.hour(twentyfour=True) in range(1, 25)
