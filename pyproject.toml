@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "chancepy"
-version = "0.1.2"
+version = "0.1.3"
 description = "Random generator helper for Python"
 authors = ["Nuni <nuni@kovrr.com>"]
 readme = "README.md"
