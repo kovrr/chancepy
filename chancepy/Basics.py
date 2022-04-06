@@ -1,10 +1,9 @@
-import sys
-
-from chancepy.BaseRandom import BaseRandom
 import random
 import string
-from typing import Optional
 import uuid
+from typing import Optional
+
+from chancepy.BaseRandom import BaseRandom
 
 
 class Basics(BaseRandom):
@@ -55,7 +54,11 @@ class Basics(BaseRandom):
 
             # return length between lower and upper bound (or if only 1 bound exists
             # default min will be 0 and default max 1M)
-            return random.randint(min_length or 0, max_length or 1_000_000)
+            _min_length = _min_length or 0
+            _max_length = _max_length or 1_000_000
+            if not min_length < max_length:
+                raise ValueError(f"min_length: '{max_length}' must be smaller that max_length {min_length}")
+            return random.randint(_min_length, _max_length)
 
         if length is not None:
             # specific length variables are mutually exclusive with the non-specific 'length' variable
