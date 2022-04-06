@@ -1,3 +1,5 @@
+import sys
+
 from chancepy.BaseRandom import BaseRandom
 import random
 import string
@@ -39,9 +41,30 @@ class Basics(BaseRandom):
         return cls.character(pool=pools[casing])
 
     @classmethod
-    def string(cls, length: Optional[int] = None, pool: Optional[str] = None) -> str:
-        if not length:
-            length = cls.natural(5, 20)
+    def string(cls, length: Optional[int] = None, pool: Optional[str] = None,
+               min_length: Optional[int] = None, max_length: Optional[int] = None) -> str:
+
+        def sample_length(_length, _min_length, _max_length) -> int:
+            # exact length specified
+            if _length is not None:
+                return _length
+
+            # no desired length specified: return reasonable size string (5-20) chars
+            if [_length, _min_length, _max_length] == [None] * 3:
+                return cls.natural(5, 20)
+
+            # return length between lower and upper bound (or if only 1 bound exists
+            # default min will be 0 and default max 1M)
+            return random.randint(min_length or 0, max_length or 1_000_000)
+
+        if length is not None:
+            # specific length variables are mutually exclusive with the non-specific 'length' variable
+            specific_len_vars = [min_length, max_length]
+            if any([var is not None for var in specific_len_vars]):
+                raise ValueError(f"specific length vars ('min_length', 'max_length') must not be set together with 'length' variable")
+
+        # no length variable specified
+        length = sample_length(length, min_length, max_length)
 
         return "".join(cls.character(pool=pool) for _ in range(length))
 
