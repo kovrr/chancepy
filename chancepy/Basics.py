@@ -53,7 +53,7 @@ class Basics(BaseRandom):
                 return cls.natural(5, 20)
 
             # return length between lower and upper bound (or if only 1 bound exists
-            # default min will be 0 and default max 1M)
+            # default min will be 0 and default max will be min*2)
             _min_length = _min_length or 0
             _max_length = _max_length or _min_length * 2
             if not min_length < max_length:
