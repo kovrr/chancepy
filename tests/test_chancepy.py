@@ -75,8 +75,8 @@ def test_string():
         max_length = min_length + Chance.natural(1, 101)
         Chance.string(length=length, min_length=min_length, max_length=max_length)
 
-    # min not <= max
+    # min not < max
     with pytest.raises(ValueError):
         min_length = Chance.natural(0, 100)
-        max_length = min_length - Chance.natural(1, 101)
+        max_length = min_length - Chance.natural(0, 101)
         Chance.string(min_length=min_length, max_length=max_length)

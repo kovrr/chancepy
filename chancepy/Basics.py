@@ -55,7 +55,7 @@ class Basics(BaseRandom):
             # return length between lower and upper bound (or if only 1 bound exists
             # default min will be 0 and default max 1M)
             _min_length = _min_length or 0
-            _max_length = _max_length or 1_000_000
+            _max_length = _max_length or _min_length * 2
             if not min_length < max_length:
                 raise ValueError(f"min_length: '{max_length}' must be smaller that max_length {min_length}")
             return random.randint(_min_length, _max_length)
