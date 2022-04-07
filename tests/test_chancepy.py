@@ -39,3 +39,44 @@ def test_time():
     assert Chance.minute() in range(0, 60)
     assert Chance.second() in range(0, 60)
     assert Chance.millisecond() in range(0, 1000)
+
+
+@pytest.mark.repeat(100)
+def test_string():
+    # check fixed length random string creation:
+    fixed_length = Chance.natural(0, 1_000)
+    assert len(Chance.string(length=fixed_length)) == fixed_length
+
+    # check variable-length random string creation
+    min_length = Chance.natural(0, 10)
+    max_length = min_length + Chance.natural(1, 100)
+    variable_length_random_string = Chance.string(min_length=min_length, max_length=max_length)
+    assert min_length <= len(variable_length_random_string) <= max_length
+
+    # check variable-length random string
+    # illegal arguments
+
+    # min_length passed where length is not None
+    with pytest.raises(ValueError):
+        length = Chance.natural(0, 100)
+        min_length = Chance.natural(0, 100)
+        Chance.string(length=length, min_length=min_length)
+
+    # max_length passed where length is not None
+    with pytest.raises(ValueError):
+        length = Chance.natural(0, 100)
+        max_length = Chance.natural(0, 100)
+        Chance.string(length=length, max_length=max_length)
+
+    # min_length and max_length passed where length is not None
+    with pytest.raises(ValueError):
+        length = Chance.natural(0, 100)
+        min_length = Chance.natural(0, 100)
+        max_length = min_length + Chance.natural(1, 101)
+        Chance.string(length=length, min_length=min_length, max_length=max_length)
+
+    # min not < max
+    with pytest.raises(ValueError):
+        min_length = Chance.natural(0, 100)
+        max_length = min_length - Chance.natural(0, 101)
+        Chance.string(min_length=min_length, max_length=max_length)
