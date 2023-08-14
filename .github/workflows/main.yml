@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -18,14 +18,16 @@ jobs:
         with:
           python-version: 3.8
 
-      - name: Run image
-        uses: abatilo/actions-poetry@v2.0.0
+      - name: Install poetry
+        uses: snok/install-poetry@v1
         with:
-          poetry-version: 1.0.10
-      
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          installer-parallel: true
+          version: 1.5.1
+
       - name: install deps
         run: poetry install
 
       - name: run tests
         run: poetry run pytest .
-      
