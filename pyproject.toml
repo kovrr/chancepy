@@ -13,7 +13,7 @@ pytz = "^2023"
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
 black = "^19.10b0"
-pytest-repeat = "^0.8.0"
+pytest-repeat = "^0.9.3"
 
 [build-system]
 requires = ["poetry>=0.12"]
